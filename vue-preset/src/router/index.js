@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About';
 import WedStd from "../views/WedStd";
+import WedStd2 from "../views/WedStd2";
 
 const routes = [
   {
@@ -23,6 +24,11 @@ const routes = [
     name: 'Test',
     component: WedStd,
   },
+  {
+    path: '/wed2',
+    name: 'WedStd2',
+    component: WedStd2
+  }
 ]
 
 const router = createRouter({

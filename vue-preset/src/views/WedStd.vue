@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Full Name: {{fullName}}</h1>
+    <h1>Full Name: {{ fullName }}</h1>
     <button type="button" @click="changeName">change</button>
   </div>
 </template>
@@ -27,7 +27,7 @@ export default {
   methods: {
     changeName() {
       this.firstName = 'uuuuuuuuu'
-    }
+    },
   },
   watch: {
     firstName() {
