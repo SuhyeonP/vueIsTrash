@@ -1,8 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About';
-import WedStd from "../views/WedStd";
-import WedStd2 from "../views/WedStd2";
+import WedStd from "../views/6.30/WedStd";
+import WedStd2 from "../views/6.30/WedStd2";
+
+import ThuStd2 from "../views/7.1/ThuStd2";
+import ButtonPass2 from "../views/7.1/ButtonPass2";
 
 const routes = [
   {
@@ -28,6 +31,16 @@ const routes = [
     path: '/wed2',
     name: 'WedStd2',
     component: WedStd2
+  },
+  {
+    path: '/701/thu1',
+    name: 'Thu std',
+    component: ThuStd2
+  },
+  {
+    path: '/701/thu2',
+    name: 'ChildrenEventPass',
+    component: ButtonPass2
   }
 ]
 
