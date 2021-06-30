@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About';
+import WedStd from "../views/WedStd";
 
 const routes = [
   {
@@ -20,7 +21,7 @@ const routes = [
   {
     path: '/test',
     name: 'Test',
-    component: <div>미미쨩</div>,
+    component: WedStd,
   },
 ]
 
