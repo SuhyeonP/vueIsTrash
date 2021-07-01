@@ -6,6 +6,10 @@ import WedStd2 from "../views/6.30/WedStd2";
 
 import ThuStd2 from "../views/7.1/ThuStd2";
 import ButtonPass2 from "../views/7.1/ButtonPass2";
+import ParentDataChange from "../views/7.1/ParentDataChange";
+import ParentDataInitial from "../views/7.1/ParentDataInitial";
+import UsingComponent from "../views/7.1/UsingComponent";
+import TopComponent from "../views/provideInject/Top/TopComponent";
 
 const routes = [
   {
@@ -41,6 +45,26 @@ const routes = [
     path: '/701/thu2',
     name: 'ChildrenEventPass',
     component: ButtonPass2
+  },
+  {
+    path: '/701/thu3',
+    name: 'Parent change child data',
+    component: ParentDataChange
+  },
+  {
+    path: '/701/thu4',
+    name: 'Parent initial child data',
+    component: ParentDataInitial
+  },
+  {
+    path: '/701/thu5',
+    name: 'Using same component many time',
+    component: UsingComponent
+  },
+  {
+    path: '/top',
+    name: 'Top component',
+    component: TopComponent
   }
 ]
 
