@@ -10,6 +10,7 @@
     <router-link to="/0705/calculator">Setup basic</router-link> |
     <router-link to="/0705/setup">setup composition</router-link> |
     <router-link to="/0705/toRefs">to Refs</router-link> |
+    <router-link to="/0705/mix-ins">mixins</router-link> |
   </div>
   <router-view/>
 </template>

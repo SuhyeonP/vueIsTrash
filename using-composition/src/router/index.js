@@ -3,8 +3,8 @@ import Home from '../views/Home.vue'
 import Mixins from "../views/Mixins.vue";
 import Calculator0705 from "../views/Calculator0705";
 import CalculatorSetup from "../views/CalculatorSetup";
-import CalculatorToRef from "../views/CalculatorToRef";
 import CompositionCalculRef from "../views/CompositionCalculRef";
+import Mixins2 from "../views/Mixins2";
 
 const routes = [
   {
@@ -59,6 +59,11 @@ const routes = [
     path: '/0705/toRefs',
     name: 'toRefs - calculator',
     component: CompositionCalculRef
+  },
+  {
+    path: '/0705/mix-ins',
+    name: 'mixins',
+    component: Mixins2,
   }
 ]
 
