@@ -1,6 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Mixins from "../views/Mixins.vue";
+import Calculator0705 from "../views/Calculator0705";
+import CalculatorSetup from "../views/CalculatorSetup";
+import CalculatorToRef from "../views/CalculatorToRef";
+import CompositionCalculRef from "../views/CompositionCalculRef";
 
 const routes = [
   {
@@ -40,6 +44,21 @@ const routes = [
     path: '/api/mixins',
     name: 'Mixins axios',
     component: Mixins,
+  },
+  {
+    path: '/0705/calculator',
+    name: 'setUp-Composition',
+    component: Calculator0705,
+  },
+  {
+    path: '/0705/setup',
+    name: 'setup-composition',
+    component: CalculatorSetup
+  },
+  {
+    path: '/0705/toRefs',
+    name: 'toRefs - calculator',
+    component: CompositionCalculRef
   }
 ]
 

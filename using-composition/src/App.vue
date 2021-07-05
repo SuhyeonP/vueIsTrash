@@ -7,6 +7,9 @@
     <router-link to="/withtoRefs/composition">With - composition</router-link> |
     <router-link to="/compositionApiProvider">Composition Inject Provider</router-link> |
     <router-link to="/api/mixins">Mix ins</router-link> |
+    <router-link to="/0705/calculator">Setup basic</router-link> |
+    <router-link to="/0705/setup">setup composition</router-link> |
+    <router-link to="/0705/toRefs">to Refs</router-link> |
   </div>
   <router-view/>
 </template>
