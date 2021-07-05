@@ -5,6 +5,7 @@ import Calculator0705 from "../views/Calculator0705";
 import CalculatorSetup from "../views/CalculatorSetup";
 import CompositionCalculRef from "../views/CompositionCalculRef";
 import Mixins2 from "../views/Mixins2";
+import LanguagePlugins from "../views/LanguagePlugins";
 
 const routes = [
   {
@@ -64,6 +65,11 @@ const routes = [
     path: '/0705/mix-ins',
     name: 'mixins',
     component: Mixins2,
+  },
+  {
+    path: '/0705/i18n',
+    name: 'i18n plugins',
+    component: LanguagePlugins,
   }
 ]
 

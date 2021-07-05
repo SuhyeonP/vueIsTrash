@@ -11,6 +11,7 @@
     <router-link to="/0705/setup">setup composition</router-link> |
     <router-link to="/0705/toRefs">to Refs</router-link> |
     <router-link to="/0705/mix-ins">mixins</router-link> |
+    <router-link to="/0705/i18n">i18n</router-link> |
   </div>
   <router-view/>
 </template>
