@@ -1,74 +1,88 @@
 <template>
   <v-container>
     <p>Dataset reader > DB(MY SQL)</p>
-    <v-form class="dataset-reader-db">
+    <v-form class="dataset-reader-db" ref="form">
       <v-row>
         <v-col>
-          <label for="server-ip">Server IP</label>
-          <v-text-field
-              v-model="serverIp"
-              id="server-ip"
-              label="Enter the server IP"
-              solo
-          />
+          <label>
+            <p class="data-label">Server IP</p>
+            <v-text-field
+                v-model="form.serverIp"
+                label="Enter the server IP"
+                :rules="checkValid"
+                solo
+                required
+            />
+          </label>
         </v-col>
       </v-row>
       <v-row>
         <v-col>
-          <label for="server-port">Server-port</label>
-          <v-text-field
-              v-model="serverPort"
-              id="server-port"
-              label="Enter the server Port"
-              placeholder="Server PORT"
-              solo
-          />
+          <label>
+            <p class="data-label">Server-port</p>
+            <v-text-field
+                v-model="form.serverPort"
+                :rules="checkValid"
+                label="Enter the server Port"
+                placeholder="Server PORT"
+                required
+                solo
+            />
+          </label>
         </v-col>
       </v-row>
       <v-row>
         <v-col>
-          <label for="user-id">User ID</label>
-          <v-text-field
-              v-model="userId"
-              id="user-id"
-              label="Enter the User ID"
-              placeholder="User ID"
-              solo
-          />
+          <label>
+            <p class="data-label">User ID</p>
+            <v-text-field
+                v-model="form.userId"
+                :rules="checkValid"
+                label="Enter the User ID"
+                placeholder="User ID"
+                required
+                solo
+            />
+          </label>
         </v-col>
       </v-row>
       <v-row>
         <v-col>
-          <label for="password">PASSWORD</label>
-          <v-text-field
-              v-model="password"
-              id="password"
-              label="Enter the Password"
-              placeholder="PassWord"
-              solo
-          />
+          <label>
+            <p class="data-label">PASSWORD</p>
+            <v-text-field
+                v-model="form.password"
+                :rules="checkValid"
+                label="Enter the Password"
+                placeholder="PassWord"
+                required
+                solo
+            />
+          </label>
         </v-col>
       </v-row>
       <v-row>
         <v-col>
-          <label for="db-optional">DB(OPTIONAL)</label>
-          <v-text-field
-              v-model="db"
-              id="db-optional"
-              label="Enter the DB(Optional)"
-              placeholder="DB(Optional)"
-              solo
+          <label>
+            <p class="data-label">DB(OPTIONAL)</p>
+            <v-text-field
+                v-model="form.db"
+                label="Enter the DB(Optional)"
+                placeholder="DB(Optional)"
+                solo
+            /></label>
 
-          />
         </v-col>
       </v-row>
       <v-row>
-        <v-col>
+        <v-spacer />
+        <v-col cols="auto">
           <v-btn>Cancel</v-btn>
         </v-col>
-        <v-col>
-          <v-btn>Next</v-btn>
+        <v-col cols="auto">
+          <v-btn @click="submit">Next</v-btn>
         </v-col>
+        <v-spacer />
       </v-row>
     </v-form>
   </v-container>
@@ -77,28 +91,44 @@
 <script>
 export default {
   name: 'TestCode',
-  data: () => ({
-    serverIp: '',
-    serverPort: '',
-    userId: '',
-    password: '',
-    db: '',
-  }),
-  computed: {
 
+  data: () => ({
+    form: {
+      serverIp: '',
+      serverPort: '',
+      userId: '',
+      password: '',
+      db: ''
+    },
+    checkValid: [
+      v => !!v || 'Requirement Information',
+    ],
+}),
+  computed: {
   },
   methods: {
-
+    submit() {
+      const validate = this.$refs.form.validate();
+      if (!validate) {
+        return;
+      }
+    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
- .dataset-reader-db {
-   border: 1px solid black;
-   border-radius: 4px;
-   margin:10px;
-   padding: 10px;
- }
+.data-label {
+  padding-bottom: 5px;
+}
+.dataset-reader-db {
+  border: 1px solid #eeedee;
+  border-radius: 4px;
+  margin:10px;
+  padding: 10px;
+  background-color: #f5f4f6;
+}
 </style>
+
+// #6b7bd7
