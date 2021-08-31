@@ -1,5 +1,7 @@
 <template>
-  <DataLoader />
+  <v-app>
+    <DataLoader />
+  </v-app>
 </template>
 
 <script>
@@ -13,6 +15,6 @@ export default {
 
   data: () => ({
     //
-  }),
+  })
 };
 </script>
