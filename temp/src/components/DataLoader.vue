@@ -10,6 +10,9 @@
             :min="min"
             hide-details
             class="range-slider"
+            color="#697bd6"
+            track-color="#fff"
+            track-fill-color="#697bd6"
           >
             <template v-slot:prepend>
               <label>
@@ -22,6 +25,7 @@
                     type="number"
                     @change="$set(range, 0, $event)"
                     outlined
+                    dense
                 />
               </label>
             </template>
@@ -36,6 +40,7 @@
                     type="number"
                     @change="$set(range, 1, $event)"
                     outlined
+                    dense
                 />
               </label>
             </template>
@@ -94,6 +99,10 @@ export default {
 
 .range-slider {
   align-items: center;
+}
+
+.range-slider label p {
+  margin-bottom: 7px;
 }
 
 </style>
