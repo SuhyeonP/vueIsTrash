@@ -1,19 +1,19 @@
 <template>
   <v-app>
     <DataLoader />
-    <TestCode />
+    <DataReader />
   </v-app>
 </template>
 
 <script>
 import DataLoader from './components/DataLoader.vue';
-import TestCode from './components/TestCode.vue';
+import DataReader from './components/TestCode.vue';
 export default {
   name: 'App',
 
   components: {
     DataLoader,
-    TestCode,
+    DataReader,
   },
 
   data: () => ({

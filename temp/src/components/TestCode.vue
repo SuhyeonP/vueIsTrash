@@ -90,7 +90,7 @@
 
 <script>
 export default {
-  name: 'TestCode',
+  name: 'DataReader',
 
   data: () => ({
     form: {
@@ -103,7 +103,7 @@ export default {
     checkValid: [
       v => !!v || 'Requirement Information',
     ],
-}),
+  }),
   computed: {
   },
   methods: {
@@ -123,12 +123,12 @@ export default {
   padding-bottom: 5px;
 }
 .dataset-reader-db {
+  margin: 10px;
+  padding: 10px;
+
   border: 1px solid #eeedee;
   border-radius: 4px;
-  margin:10px;
-  padding: 10px;
+
   background-color: #f5f4f6;
 }
 </style>
-
-// #6b7bd7
