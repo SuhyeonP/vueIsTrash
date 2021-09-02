@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <p>Dataset reader > DB(MY SQL)</p>
-    <v-form class="dataset-reader-db" ref="form">
+    <v-form class="dataset-reader-db" ref="form" v-if="pageType">
       <v-row>
         <v-col>
           <label>
@@ -85,6 +85,37 @@
         <v-spacer />
       </v-row>
     </v-form>
+    <v-form class="dataset-reader-db" ref="form" v-else>
+      <label>
+        <p>Server DB</p>
+        <v-select
+            v-model="serverSelect"
+            label="Select a DB"
+            hide-details
+            solo
+        />
+      </label>
+      <br/>
+      <label>
+        <p>Server table</p>
+        <v-select
+            v-model="serverTable"
+            label="Select a table"
+            hide-selected
+            solo/>
+      </label>
+      <br/>
+      <v-row>
+        <v-spacer/>
+        <v-col cols="auto">
+          <v-btn>Cancel</v-btn>
+        </v-col>
+        <v-col cols="auto">
+          <v-btn @click="submit">Next</v-btn>
+        </v-col>
+        <v-spacer/>
+      </v-row>
+    </v-form>
   </v-container>
 </template>
 
@@ -93,6 +124,9 @@ export default {
   name: 'DataReader',
 
   data: () => ({
+    pageType:false,
+    serverSelect:[],
+    serverTable:[],
     form: {
       serverIp: '',
       serverPort: '',
@@ -132,3 +166,4 @@ export default {
   background-color: #f5f4f6;
 }
 </style>
+

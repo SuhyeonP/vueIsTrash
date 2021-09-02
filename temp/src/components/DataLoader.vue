@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <p>Data loader</p>
-    <v-form class="data-loader">
+    <v-form class="data-loader" ref="form">
       <v-row>
         <v-col cols="6">
           <v-range-slider
@@ -50,23 +50,36 @@
           <label>
             <p>Target columns</p>
             <v-select
+                v-model="selectColumns"
+                :items="targetColumns"
                 label="Select target columns"
-                v-model="targetColumns"
-                hide-details
+                multiple
                 solo
-            />
+            >
+              <template v-slot:selection>
+                <p  class="hidden-times">Select target columns</p>
+              </template>
+            </v-select>
           </label>
+          <ul class="columns-chips">
+            <li v-for="(ele, ind) in selectColumns" :key="ind" class="column-chip">
+              <v-chip
+                  close
+                  @click:close="removeChips(ind)"
+              >{{ele}}</v-chip>
+            </li>
+          </ul>
         </v-col>
         <v-col cols="2">
           <label>
             <p>Batch size</p>
             <v-text-field
                 v-model="batchSize"
-                hide-details="auto"
                 :rules="checkValid"
                 type="number"
                 label="Enter the batch size"
                 solo
+                required
             />
           </label>
           <div class="batch-check-list">
@@ -121,7 +134,8 @@ export default {
     checkValid: [
       v => !!v || 'Requirement Information',
     ],
-    targetColumns:[],
+    targetColumns:['test1','test2','test3'],
+    selectColumns:['test1','test3']
   }),
   methods: {
     batchSizeEvent() {
@@ -133,9 +147,19 @@ export default {
     splitShuffleEvent() {
       this.splitShuffle = !this.splitShuffle
     },
+    removeChips(e) {
+      if(e === 0){
+        this.selectColumns.splice(e,1)
+      } else{
+        this.selectColumns.splice(e,e)
+      }
+    },
     submit() {
+      const validate = this.$refs.form.validate();
+      if (!validate) {
+        return;
+      }
       console.log('submit')
-      return;
     }
   }
 }
@@ -170,5 +194,29 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.columns-chips {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.column-chip {
+  margin:4px;
+}
+.hidden-times {
+  display:none;
+}
+
+.hidden-times:first-child {
+  display:block;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+  color: rgba(0, 0, 0, 0.6);
+  margin:1px 0 0 0;
 }
 </style>
