@@ -121,7 +121,7 @@
 
 <script>
 export default {
-  name: 'DataReader',
+  name: 'DatasetReader',
 
   data: () => ({
     pageType:false,
@@ -145,6 +145,13 @@ export default {
       const validate = this.$refs.form.validate();
       if (!validate) {
         return;
+      } else {
+        if (!this.pageType) {
+          this.pageType = true;
+        } else {
+          //submit here
+          return;
+        }
       }
     }
   }
@@ -166,4 +173,3 @@ export default {
   background-color: #f5f4f6;
 }
 </style>
-
