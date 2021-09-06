@@ -12,8 +12,8 @@ export default {
   name: 'App',
 
   components: {
-    DataLoader,
     TestCode,
+    DataLoader
   },
 
   data: () => ({
